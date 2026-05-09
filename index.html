@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium UV Printing Designs | ₹569 Each • Set A Bundle • Complete Bundle ₹5,449</title>
-    <meta name="description" content="Buy high‑resolution UV printing designs individually at ₹569 each, get the Set A bundle (designs 6‑8), or grab all 17 designs for ₹5,449. Instant download, commercial license.">
+    <title>Premium UV Printing Designs | ₹799 Each • Set A Bundle • Complete Bundle ₹5,449</title>
+    <meta name="description" content="Buy high‑resolution UV printing designs individually at ₹799 each, get the Set A bundle (designs 6‑8), or grab all 17 designs for ₹5,449. Instant download, commercial license.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     
@@ -35,6 +35,373 @@
             --gray-50: #f8fafc;
             --gray-100: #f1f5f9;
             --gray-200: #e2e8f0;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --accent: #e11d48;
+            --accent-hover: #be123c;
+            --gold: #c99a2b;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --shadow-card: 0 6px 20px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.03);
+            --shadow-hover: 0 20px 30px rgba(0,0,0,0.12);
+            --transition: 0.2s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-800);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            padding-top: 80px;
+        }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        .site-header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background: var(--navy);
+            z-index: 1000;
+            padding: 0 24px;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 72px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            backdrop-filter: blur(8px);
+        }
+        .logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-area img {
+            width: 42px; height: 42px; border-radius: 10px; object-fit: cover;
+            border: 2px solid var(--gold);
+        }
+        .logo-area span {
+            font-weight: 700; font-size: 1.2rem; color: white; letter-spacing: -0.3px;
+        }
+        .logo-area span em { font-style: normal; color: var(--gold); }
+        .header-actions { display: flex; gap: 12px; align-items: center; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 10px 22px; border-radius: 50px; font-weight: 600; font-size: 0.9rem;
+            text-decoration: none; cursor: pointer; transition: var(--transition);
+            white-space: nowrap; letter-spacing: 0.2px;
+        }
+        .btn-primary {
+            background: var(--accent); color: white; border: none;
+        }
+        .btn-primary:hover {
+            background: var(--accent-hover); transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(225,29,72,0.4);
+        }
+        .btn-outline {
+            background: transparent; border: 2px solid var(--gold); color: var(--gold);
+        }
+        .btn-outline:hover {
+            background: var(--gold); color: var(--navy); transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .hero { text-align: center; padding: 40px 0 30px; }
+        .hero h1 {
+            font-size: 2.8rem; font-weight: 700; letter-spacing: -0.5px;
+            color: var(--navy); margin-bottom: 12px;
+        }
+        .hero h1 .accent-text { color: var(--accent); }
+        .hero p { font-size: 1.1rem; color: var(--gray-600); max-width: 680px; margin: 0 auto 24px; }
+        .price-highlight { font-weight: 700; color: var(--accent); }
+
+        .section-title {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 28px; flex-wrap: wrap; gap: 16px;
+        }
+        .section-title h2 {
+            font-size: 1.8rem; font-weight: 700; color: var(--navy);
+            padding-left: 16px; border-left: 5px solid var(--accent);
+        }
+
+        /* Product grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+        .product-card {
+            background: var(--white); border-radius: var(--radius-lg); overflow: hidden;
+            box-shadow: var(--shadow-card); transition: var(--transition);
+            border: 1px solid var(--gray-200); position: relative; display: flex; flex-direction: column;
+        }
+        .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+        .product-img {
+            width: 100%; aspect-ratio: 1/1; object-fit: cover; cursor: pointer;
+            transition: transform 0.3s; background: #ecedee;
+        }
+        .product-card:hover .product-img { transform: scale(1.03); }
+        /* Badge box */
+        .set-badge-box {
+            position: absolute; top: 12px; left: 12px;
+            background: white; border: 2px solid var(--accent); color: var(--accent);
+            padding: 4px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700;
+            letter-spacing: 0.5px; z-index: 2; box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        .product-info {
+            padding: 16px 16px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1;
+        }
+        .product-name { font-weight: 600; font-size: 1rem; color: var(--navy); }
+        .product-price { font-weight: 700; font-size: 1.5rem; color: var(--accent); }
+        .product-actions { margin-top: auto; }
+        .product-actions .btn { width: 100%; justify-content: center; padding: 12px; font-size: 0.9rem; }
+
+        /* Set A special card */
+        .set-card {
+            background: white; border-radius: var(--radius-lg); padding: 20px;
+            border: 1.5px solid var(--accent); box-shadow: var(--shadow-card);
+            display: flex; flex-direction: column; gap: 16px;
+            transition: var(--transition);
+        }
+        .set-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+        .set-thumbnails {
+            display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+        }
+        .set-thumbnails img {
+            width: 70px; height: 70px; border-radius: 10px; object-fit: cover;
+            border: 2px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .set-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); text-align: center; }
+        .set-price { font-size: 1.6rem; font-weight: 700; color: var(--accent); text-align: center; }
+        .set-card .btn { width: 100%; justify-content: center; }
+
+        /* Bundle highlight */
+        .bundle-highlight {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            border: 1.5px solid var(--gold); border-radius: var(--radius-lg);
+            padding: 32px; margin: 30px 0 50px; display: flex; flex-wrap: wrap;
+            align-items: center; gap: 28px; box-shadow: 0 10px 30px rgba(201,154,43,0.08);
+        }
+        .bundle-thumbnails { display: flex; flex-wrap: wrap; gap: 8px; max-width: 480px; }
+        .bundle-thumbnails img {
+            width: 60px; height: 60px; border-radius: 8px; object-fit: cover;
+            border: 2px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .bundle-content h3 { font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .bundle-content p { color: var(--gray-600); margin-bottom: 12px; max-width: 400px; }
+        .bundle-price { font-size: 2rem; font-weight: 700; color: var(--accent); margin-bottom: 16px; }
+        .bundle-content .btn { padding: 14px 32px; font-size: 1rem; }
+
+        /* Terms */
+        .terms-section { text-align: center; margin: 50px 0 30px; }
+        .terms-toggle {
+            background: none; border: 2px solid #cbd5e1; padding: 10px 24px;
+            border-radius: 50px; font-weight: 500; color: #64748b; cursor: pointer;
+            transition: var(--transition); font-size: 0.9rem;
+        }
+        .terms-toggle:hover { border-color: var(--navy); color: var(--navy); }
+        .terms-content {
+            display: none; background: white; padding: 24px; border-radius: var(--radius-md);
+            box-shadow: var(--shadow-card); margin-top: 16px; text-align: left;
+            max-width: 700px; margin-left: auto; margin-right: auto; font-size: 0.9rem;
+            border: 1px solid #e2e8f0;
+        }
+        .terms-content.active { display: block; animation: fadeSlide 0.25s ease; }
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .terms-content p { margin-bottom: 10px; }
+
+        /* Footer */
+        .footer {
+            background: white; border-top: 1px solid var(--gray-200);
+            text-align: center; padding: 32px 20px; margin-top: 40px;
+        }
+        .footer-logo {
+            width: 64px; height: 64px; border-radius: 50%; object-fit: cover;
+            border: 2px solid var(--gold); margin-bottom: 8px;
+        }
+        .footer p { margin: 4px 0; font-size: 0.9rem; color: var(--gray-600); }
+        .footer a { color: var(--navy); font-weight: 600; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; color: var(--accent); }
+
+        .floating-support {
+            position: fixed; bottom: 24px; right: 24px; width: 48px; height: 48px;
+            background: var(--accent); color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; box-shadow: 0 8px 24px rgba(225,29,72,0.4);
+            z-index: 999; font-size: 1.2rem; transition: var(--transition);
+        }
+        .floating-support:hover { transform: scale(1.08); background: var(--accent-hover); }
+
+        .lightbox {
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92);
+            z-index: 9999; align-items: center; justify-content: center;
+            flex-direction: column; cursor: pointer; padding: 20px;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 90vw; max-height: 85vh; border-radius: var(--radius-md);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 3px solid white;
+            object-fit: contain; animation: zoomIn 0.25s ease;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .lightbox-close {
+            position: absolute; top: 20px; right: 30px; font-size: 2.5rem; color: white;
+            cursor: pointer; width: 48px; height: 48px; background: rgba(255,255,255,0.12);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            transition: 0.2s;
+        }
+        .lightbox-close:hover { background: var(--accent); transform: rotate(90deg); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .products-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
+            .bundle-highlight { flex-direction: column; text-align: center; }
+            .bundle-thumbnails { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a href="#" class="logo-area">
+            <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Gizmos Hubb Logo">
+            <span>Gizmos<em>Hubb</em></span>
+        </a>
+        <div class="header-actions">
+            <a href="#bundle" class="btn btn-outline">Full Bundle ₹5,449</a>
+            <a href="https://rzp.io/rzp/UVPRINT" class="btn btn-primary">
+                <i class="fas fa-shopping-cart"></i> Buy Now (Single)
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Premium <span class="accent-text">UV Printing</span> Designs</h1>
+            <p>Unique, high‑resolution designs ready for your UV printing business.<br>
+            Individual designs at <span class="price-highlight">₹799 each</span> • Special Set A bundle available • Complete pack at <span class="price-highlight">₹5,449</span></p>
+        </section>
+
+        <div class="section-title">
+            <h2>Individual Designs</h2>
+            <p style="color:#475569;">Click images to preview • ₹799 per design</p>
+        </div>
+
+        <div class="products-grid" id="productsContainer"></div>
+
+        <!-- Full Bundle -->
+        <div id="bundle" class="bundle-highlight">
+            <div class="bundle-thumbnails" id="bundleThumbs"></div>
+            <div class="bundle-content">
+                <h3>🔥 Complete Bundle – All 17 Designs</h3>
+                <p>Get every single design in one pack. Ideal for professionals who want the entire collection.</p>
+                <div class="bundle-price">₹5,449</div>
+                <a href="https://rzp.io/rzp/UVPRINT" class="btn btn-primary">
+                    <i class="fas fa-shopping-cart"></i> Buy Complete Bundle
+                </a>
+            </div>
+        </div>
+
+        <!-- Terms -->
+        <div class="terms-section">
+            <button class="terms-toggle" onclick="toggleTerms()">📋 Terms & Conditions</button>
+            <div id="termsBox" class="terms-content">
+                <p><strong>1. Digital Product:</strong> You are purchasing a digital download of UV printing design files. No physical item will be shipped.</p>
+                <p><strong>2. License:</strong> All designs include a commercial license for unlimited use in your projects. Reselling the files as-is is prohibited.</p>
+                <p><strong>3. Payment & Delivery:</strong> Instant download link is provided after successful payment. Contact support within 24 hours if you face any access issues.</p>
+                <p><strong>4. Refunds:</strong> Due to the digital nature, all sales are final. Replacement for technical issues is guaranteed.</p>
+                <p><strong>5. Support:</strong> For queries, mail us at gizmoshubb@gmail.com.</p>
+                <p><b>By purchasing, you agree to these terms.</b></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Logo" class="footer-logo">
+        <p><strong>GizmosHubb</strong> – Premium Digital Products</p>
+        <p style="font-size:0.8rem;">For more designs, visit our <a href="#">store</a>.</p>
+    </footer>
+
+    <a href="mailto:gizmoshubb@gmail.com" class="floating-support" title="Support">
+        <i class="fas fa-headset"></i>
+    </a>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightboxDirect()">&times;</span>
+        <img src="" alt="Design preview" id="lightboxImg">
+    </div>
+
+    <script>
+        const imageFiles = [
+            'x-01.jpg', 'x-02.jpg', 'x-03.jpg', 'x-04.jpg', 'x-05.jpg',
+            'x-06.jpg', 'x-07.jpg', 'x-08.jpg', 'x-09.jpg', 'x-10.jpg',
+            'x-11.jpg', 'x-12.jpg', 'x-13.jpg', 'x-14.jpg', 'x-15.jpg',
+            'x-16.jpg', 'x-17.jpg'
+        ];
+        const imageBasePath = './';   // UPDATE THIS PATH
+        const paymentLinkSingle = 'https://rzp.io/rzp/UVPRINT';  // individual designs (₹799)
+        const paymentLinkSetA = 'https://rzp.io/rzp/UVPRINT';    // Set A bundle (₹799)
+        const paymentLinkBundle = 'https://rzp.io/rzp/UVPRINT';  // complete bundle (₹5,449)
+
+        function isSetADesign(index) {
+            return (index === 5 || index === 6 || index === 7);
+        }
+
+        function renderProducts() {
+            const container = document.getElementById('productsContainer');
+            container.innerHTML = '';
+
+            imageFiles.forEach((file, index) => {
+                const designNum = index + 1;
+                const isSetA = isSetADesign(index);
+                
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    ${isSetA ? '<span class="set-badge-box">SET A</span>' : ''}
+                    <img src="${imageBasePath}${file}" 
+                         alt="Design ${designNum}" 
+                         class="product-img" 
+                         loading="lazy"
+                         onclick="openLightbox('${imageBasePath}${file}')"
+                         onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><rect fill=%22%23f1f5f9%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.35em%22 fill=%22%2394a3b8%22 font-size=%2216%22>Design ${designNum}</text></svg>'">
+                    <div class="product-info">
+                        <span class="product-name">Design #${designNum}</span>
+                        <div class="product-price">₹799</div>
+                        ${!isSetA ? `
+                        <div class="product-actions">
+                            <a href="${paymentLinkSingle}" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-shopping-cart"></i> Buy Now
+                            </a>
+                        </div>` : '<p style="font-size:0.8rem; color:#64748b;">Part of Set A – see below</p>'}
+                    </div>
+                `;
+                container.appendChild(card);
+
+                if (index === 7) {
+                    const setCard = document.createElement('div');
+                    setCard.className = 'set-card';
+                    setCard.innerHTML = `
+                        <h3>🎯 Set A Bundle (Designs 6, 7, 8)</h3>
+                        <div class="set-thumbnails">
+                            ${imageFiles.slice(5, 8).map(f => `<img src="${imageBasePath}${f}" alt="Set A design" loading="lazy">`).join('')}
+                        </div>
+                        <div class="set-price">₹799</div>
+                        <a href="${paymentLinkSetA}" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-shopping-cart"></i> Buy Set A
+                        </a>
+                    `;
+                    container.appendChild(setCard);
+                }
+            });
+        }
+
+        function renderBundleThumbnails() {
+            const bundleContainer = document.getElementById('bundleThumbs');
+            bundleContainer.innerHTML = '';
+            imageFiles.forEach(file => {
+                const img = docum            --gray-200: #e2e8f0;
             --gray-600: #475569;
             --gray-800: #1e293b;
             --accent: #e11d48;
