@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium UV Printing Designs | ₹849 Each • Bundle ₹5,449</title>
-    <meta name="description" content="Buy high‑resolution UV printing designs individually at ₹849 each or grab the full 17‑design bundle for ₹5,449. Instant download, commercial license included.">
+    <title>Premium UV Printing Designs | ₹569 Each • Bundle ₹5,449</title>
+    <meta name="description" content="Buy high‑resolution UV printing designs individually at ₹569 each or grab the full 17‑design bundle for ₹5,449. Instant download, commercial license included.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     
@@ -108,6 +108,7 @@
         .header-actions {
             display: flex;
             gap: 12px;
+            align-items: center;
         }
         .btn {
             display: inline-flex;
@@ -189,6 +190,14 @@
             padding-left: 16px;
             border-left: 5px solid var(--accent);
         }
+        .buy-note {
+            font-size: 0.9rem;
+            color: #475569;
+            background: #fff;
+            padding: 4px 16px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+        }
 
         /* Product grid */
         .products-grid {
@@ -203,10 +212,10 @@
             overflow: hidden;
             box-shadow: var(--shadow-card);
             transition: var(--transition);
-            display: flex;
-            flex-direction: column;
             border: 1px solid var(--gray-200);
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
         .product-card:hover {
             transform: translateY(-6px);
@@ -223,25 +232,28 @@
         .product-card:hover .product-img {
             transform: scale(1.03);
         }
-        .product-badge {
+        /* SET BADGE BOX */
+        .set-badge-box {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            background: var(--accent);
-            color: white;
-            padding: 4px 12px;
+            top: 12px;
+            left: 12px;
+            background: white;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            padding: 4px 14px;
             border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 600;
+            font-size: 0.75rem;
+            font-weight: 700;
             letter-spacing: 0.5px;
             z-index: 2;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            display: inline-block;
         }
         .product-info {
             padding: 16px 16px 20px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
             flex: 1;
         }
         .product-name {
@@ -251,17 +263,14 @@
         }
         .product-price {
             font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: var(--accent);
+            margin-top: 4px;
         }
-        .product-actions {
+        .product-hint {
+            font-size: 0.8rem;
+            color: #64748b;
             margin-top: auto;
-        }
-        .product-actions .btn {
-            width: 100%;
-            justify-content: center;
-            padding: 12px;
-            font-size: 0.9rem;
         }
 
         /* Bundle highlight */
@@ -479,11 +488,18 @@
             .bundle-thumbnails {
                 justify-content: center;
             }
+            .header-actions {
+                gap: 8px;
+            }
+            .btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- ═══════════════ HEADER ═══════════════ -->
+    <!-- ═══════════════ HEADER (only Bundle + single Buy Now) ═══════════════ -->
     <header class="site-header">
         <a href="#" class="logo-area">
             <img src="https://github.com/GizmosHubb/cartoon-bundle/blob/main/WhatsApp%20Image%202025-03-17%20at%209.41.00%20PM.jpeg?raw=true" alt="Gizmos Hubb Logo">
@@ -491,21 +507,24 @@
         </a>
         <div class="header-actions">
             <a href="#bundle" class="btn btn-outline">Bundle ₹5,449</a>
-            <a href="https://rzp.io/rzp/UVPRINT" class="btn btn-primary">Buy Now</a>
+            <a href="https://rzp.io/rzp/UVPRINT" class="btn btn-primary" id="mainBuyBtn">
+                <i class="fas fa-shopping-cart"></i> Buy Now (Single Design ₹569)
+            </a>
         </div>
     </header>
 
     <main class="container">
         <!-- Hero -->
         <section class="hero">
-            <h1>Premium <span class="accent-text">UV Printing</span> Design Store</h1>
-            <p>unique, high‑resolution designs for your UV printing business. <br>Buy individually at <span class="price-highlight">₹849 each</span> or grab the complete bundle at the best price.</p>
+            <h1>Premium <span class="accent-text">UV Printing</span> Designs</h1>
+            <p>Unique, high‑resolution designs for your UV printing business.<br>
+            Buy any individual design for just <span class="price-highlight">₹569</span> or grab the complete bundle at the best price.</p>
         </section>
 
-        <!-- Individual Products -->
+        <!-- Individual Products (no internal Buy Now buttons) -->
         <div class="section-title">
             <h2>Individual Designs</h2>
-            <p style="color:#475569;">Click image to preview · Each design sold separately · ₹849</p>
+            <span class="buy-note">⬆️ Use the header “Buy Now” button to purchase any design</span>
         </div>
         <div class="products-grid" id="productsContainer"></div>
 
@@ -566,11 +585,11 @@
         // ⚠️ IMPORTANT: Change this to your actual image folder or hosting URL
         const imageBasePath = './';   // e.g., 'https://your-server.com/designs/'
 
-        // Payment link (same for all products now; later you can use different links per design)
+        // Single payment link (used by header Buy Now and bundle)
         const paymentLink = 'https://rzp.io/rzp/UVPRINT';
 
-        // Set badge for designs that belong to a specific set (6,7,8)
-        function getDesignBadge(index) {
+        // Set badge for designs 6,7,8 – displayed inside a box
+        function getSetBadge(index) {
             const designNum = index + 1;
             if (designNum === 6 || designNum === 7 || designNum === 8) {
                 return 'SET A';
@@ -578,18 +597,18 @@
             return null;
         }
 
-        // Build product cards
+        // Build product cards without individual buy buttons
         function renderProducts() {
             const container = document.getElementById('productsContainer');
             container.innerHTML = '';
 
             imageFiles.forEach((file, index) => {
                 const designNumber = index + 1;
-                const badge = getDesignBadge(index);
+                const badge = getSetBadge(index);
                 const card = document.createElement('div');
                 card.className = 'product-card';
                 card.innerHTML = `
-                    ${badge ? `<span class="product-badge">${badge}</span>` : ''}
+                    ${badge ? `<span class="set-badge-box">${badge}</span>` : ''}
                     <img src="${imageBasePath}${file}" 
                          alt="Design ${designNumber}" 
                          class="product-img" 
@@ -598,19 +617,15 @@
                          onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><rect fill=%22%23f1f5f9%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.35em%22 fill=%22%2394a3b8%22 font-size=%2216%22>Design ${designNumber}</text></svg>'">
                     <div class="product-info">
                         <span class="product-name">Design #${designNumber}</span>
-                        <div class="product-price">₹849</div>
-                        <div class="product-actions">
-                            <a href="${paymentLink}" class="btn btn-primary" target="_blank">
-                                <i class="fas fa-shopping-cart"></i> Buy Now
-                            </a>
-                        </div>
+                        <div class="product-price">₹569</div>
+                        <div class="product-hint">Click image to preview</div>
                     </div>
                 `;
                 container.appendChild(card);
             });
         }
 
-        // Bundle thumbnails (small preview of all designs)
+        // Bundle thumbnails
         function renderBundleThumbnails() {
             const bundleContainer = document.getElementById('bundleThumbs');
             bundleContainer.innerHTML = '';
@@ -674,7 +689,7 @@
         // ─── Init ───
         renderProducts();
         renderBundleThumbnails();
-        console.log('✅ UV Printing Design Store ready – ₹849 per design, bundle ₹5,449.');
+        console.log('✅ UV Design Store ready – ₹569 per design, bundle ₹5,449.');
     </script>
 </body>
 </html>
